@@ -1,0 +1,6 @@
+.\SG.exe .\Calc.atg
+
+.\PGT.exe .\Calc.atg
+
+csc *.cs
+
