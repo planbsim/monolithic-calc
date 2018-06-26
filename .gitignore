@@ -328,3 +328,11 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder 
 .mfractor/
+
+# dotnet publish to output folders
+[Oo]ut/
+[Pp]ublish/
+
+# coco2 calculator
+calculator/Calc.exe
+calculator/calculation.txt

@@ -33,6 +33,27 @@ public class CalcSem {
 
   // *** start of global SYN and SEM declarations from ATG ***
   
+  public static int LastCalcResult = 0;
+  
+  // addition
+  public static int Add(int a, int b) {
+    return a + b;
+  }
+  
+  // substraction
+  public static int Sub(int a, int b) {
+    return a - b;
+  }
+  
+  // multiplication
+  public static int Mult(int a, int b) {
+    return a * b;
+  }
+  
+  // division
+  public static int Div(int a, int b) {
+    return a / b;
+  }
 
   // *** end of global SYN and SEM declarations from ATG ***
 
@@ -48,7 +69,7 @@ public class CalcSem {
           NT_Expr(out e);
           break;
         case 2: // SEM
-          Console.WriteLine(e);
+          Console.WriteLine(e); LastCalcResult = e;
           break;
       } // switch
     } // for
@@ -67,13 +88,13 @@ public class CalcSem {
           NT_Term(out t);
           break;
         case 3: // SEM
-          e = e + t;
+          e = Add(e, t);
           break;
         case 4:
           NT_Term(out t);
           break;
         case 5: // SEM
-          e = e - t;
+          e = Sub(e, t);
           break;
       } // switch
     } // for
@@ -92,13 +113,13 @@ public class CalcSem {
           NT_Fact(out f);
           break;
         case 3: // SEM
-          t = t * f;
+          t = Mult(t, f);
           break;
         case 4:
           NT_Fact(out f);
           break;
         case 5: // SEM
-          t = t / f;
+          t = Div(t, f);
           break;
       } // switch
     } // for

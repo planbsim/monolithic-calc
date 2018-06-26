@@ -1,0 +1,9 @@
+version: '3.6'
+
+services:
+  webcalculator-aspnetcore-2.0:
+    build:
+      context: ./webapp/WebCalculator
+    image: webcalculator-aspnetcore-2.0
+    ports: 
+      - "32457:80"

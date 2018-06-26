@@ -1,5 +1,29 @@
 COMPILER Calc
 
+SEM<<
+  public static int LastCalcResult = 0;
+
+  // addition
+  public static int Add(int a, int b) {
+    return a + b;
+  } 
+
+  // substraction
+  public static int Sub(int a, int b) {
+    return a - b;
+  }
+
+  // multiplication 
+  public static int Mult(int a, int b) {
+    return a * b;
+  }
+
+  // division
+  public static int Div(int a, int b) {
+    return a / b;
+  }
+>>
+
 CHARACTER SETS
   digit      = '0' .. '9'.
   whiteSpace = CHR(9) + EOL IGNORE. /*' ' ignored by default*/ 
@@ -20,18 +44,18 @@ NONTERMINALS
 RULES
 
   Calc =                 LOCAL<<int e = 0;>> 
-    Expr<<out e>>        SEM<<Console.WriteLine(e);>>.  
+    Expr<<out e>>        SEM<<Console.WriteLine(e); LastCalcResult = e; >>.  
     
   Expr<<out int e>> =    LOCAL<<int t = 0; e = 0;>> 
     Term<<out e>>             
-    { '+' Term<<out t>>  SEM<<e = e + t;>>
-    | '-' Term<<out t>>  SEM<<e = e - t;>>
+    { '+' Term<<out t>>  SEM<<e = Add(e, t);>>
+    | '-' Term<<out t>>  SEM<<e = Sub(e, t);>>
     }.
     
   Term<<out int t>> =    LOCAL<<int f = 0; t = 0;>>
     Fact<<out t>>
-    { '*' Fact<<out f>>  SEM<<t = t * f;>>
-    | '/' Fact<<out f>>  SEM<<t = t / f;>>
+    { '*' Fact<<out f>>  SEM<<t = Mult(t, f);>>
+    | '/' Fact<<out f>>  SEM<<t = Div(t, f);>>
     }.
     
   Fact<<out int f>> =    LOCAL <<f = 0;>>

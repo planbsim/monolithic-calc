@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WebCalculator.Calculation.Service\WebCalculator.Calculation.Service.csproj" />
+    <ProjectReference Include="..\WebCalculator.Calculation\WebCalculator.Calculation.Coco2.csproj" />
+  </ItemGroup>
+
+</Project>

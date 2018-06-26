@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <DotNetCliToolReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Tools" Version="2.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WebCalculator.Calculation.Service.Coco2\WebCalculator.Calculation.Service.Coco2.csproj" />
+    <ProjectReference Include="..\WebCalculator.Calculation.Service\WebCalculator.Calculation.Service.csproj" />
+    <ProjectReference Include="..\WebCalculator.Calculation\WebCalculator.Calculation.Coco2.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,49 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27703.2000
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCalculator", "WebCalculator\WebCalculator.csproj", "{A845A4F8-6FAF-4D56-832A-5976CAA4E63C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCalculator.Calculation.Coco2", "WebCalculator.Calculation\WebCalculator.Calculation.Coco2.csproj", "{27951E4E-E2A7-48CF-B1F3-8E0CAD73F202}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCalculator.Calculation.Service", "WebCalculator.Calculation.Service\WebCalculator.Calculation.Service.csproj", "{34EBAF79-3099-4986-8B24-52EF9819A477}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCalculator.Calculation.Service.Coco2", "WebCalculator.Calculation.Service.Coco2\WebCalculator.Calculation.Service.Coco2.csproj", "{1EF2DAB3-6A0B-4EB5-8614-E59EAA8C2D87}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCalculator.Calculation.Service.Coco2.Test", "WebCalculator.Calculation.Service.Coco2.Test\WebCalculator.Calculation.Service.Coco2.Test.csproj", "{4A5B87A7-5479-4CA7-8B5B-9FAB8C6EA060}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A845A4F8-6FAF-4D56-832A-5976CAA4E63C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A845A4F8-6FAF-4D56-832A-5976CAA4E63C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A845A4F8-6FAF-4D56-832A-5976CAA4E63C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A845A4F8-6FAF-4D56-832A-5976CAA4E63C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27951E4E-E2A7-48CF-B1F3-8E0CAD73F202}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27951E4E-E2A7-48CF-B1F3-8E0CAD73F202}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27951E4E-E2A7-48CF-B1F3-8E0CAD73F202}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27951E4E-E2A7-48CF-B1F3-8E0CAD73F202}.Release|Any CPU.Build.0 = Release|Any CPU
+		{34EBAF79-3099-4986-8B24-52EF9819A477}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{34EBAF79-3099-4986-8B24-52EF9819A477}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{34EBAF79-3099-4986-8B24-52EF9819A477}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{34EBAF79-3099-4986-8B24-52EF9819A477}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1EF2DAB3-6A0B-4EB5-8614-E59EAA8C2D87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1EF2DAB3-6A0B-4EB5-8614-E59EAA8C2D87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1EF2DAB3-6A0B-4EB5-8614-E59EAA8C2D87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1EF2DAB3-6A0B-4EB5-8614-E59EAA8C2D87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4A5B87A7-5479-4CA7-8B5B-9FAB8C6EA060}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4A5B87A7-5479-4CA7-8B5B-9FAB8C6EA060}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4A5B87A7-5479-4CA7-8B5B-9FAB8C6EA060}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4A5B87A7-5479-4CA7-8B5B-9FAB8C6EA060}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {41FE91F5-BE9F-4CF2-9153-F24A81B1CE63}
+	EndGlobalSection
+EndGlobal

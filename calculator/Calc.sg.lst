@@ -2,45 +2,69 @@ Coco-2 SG (source: .\Calc.atg)
 
     1| COMPILER Calc
     2| 
-    3| CHARACTER SETS
-    4|   digit      = '0' .. '9'.
-    5|   whiteSpace = CHR(9) + EOL IGNORE. /*' ' ignored by default*/ 
-    6| 
-    7| TOKENS                      
-    8|   '+'.  '-'.  '*'.  '/'.  '('.  ')'.
-    9| 
-   10| TOKEN CLASSES           
-   11|   number<<out int n>> = 
-   12|     digit { digit }      LEX<<n = Convert.ToInt32(tokenStr);>>.
-   13| 
-   14| NONTERMINALS
-   15|   Calc.
-   16|   Expr<<out int e>>.
-   17|   Term<<out int t>>.
-   18|   Fact<<out int f>>.
-   19| 
-   20| RULES
-   21| 
-   22|   Calc =                 LOCAL<<int e = 0;>> 
-   23|     Expr<<out e>>        SEM<<Console.WriteLine(e);>>.  
-   24|     
-   25|   Expr<<out int e>> =    LOCAL<<int t = 0; e = 0;>> 
-   26|     Term<<out e>>             
-   27|     { '+' Term<<out t>>  SEM<<e = e + t;>>
-   28|     | '-' Term<<out t>>  SEM<<e = e - t;>>
-   29|     }.
-   30|     
-   31|   Term<<out int t>> =    LOCAL<<int f = 0; t = 0;>>
-   32|     Fact<<out t>>
-   33|     { '*' Fact<<out f>>  SEM<<t = t * f;>>
-   34|     | '/' Fact<<out f>>  SEM<<t = t / f;>>
-   35|     }.
-   36|     
-   37|   Fact<<out int f>> =    LOCAL <<f = 0;>>
-   38|       number<<out f>>
-   39|     | '(' Expr<<out f>> ')'.
-   40| 
-   41| END Calc.
+    3| SEM<<
+    4|   public static int LastCalcResult = 0;
+    5| 
+    6|   // addition
+    7|   public static int Add(int a, int b) {
+    8|     return a + b;
+    9|   } 
+   10| 
+   11|   // substraction
+   12|   public static int Sub(int a, int b) {
+   13|     return a - b;
+   14|   }
+   15| 
+   16|   // multiplication 
+   17|   public static int Mult(int a, int b) {
+   18|     return a * b;
+   19|   }
+   20| 
+   21|   // division
+   22|   public static int Div(int a, int b) {
+   23|     return a / b;
+   24|   }
+   25| >>
+   26| 
+   27| CHARACTER SETS
+   28|   digit      = '0' .. '9'.
+   29|   whiteSpace = CHR(9) + EOL IGNORE. /*' ' ignored by default*/ 
+   30| 
+   31| TOKENS                      
+   32|   '+'.  '-'.  '*'.  '/'.  '('.  ')'.
+   33| 
+   34| TOKEN CLASSES           
+   35|   number<<out int n>> = 
+   36|     digit { digit }      LEX<<n = Convert.ToInt32(tokenStr);>>.
+   37| 
+   38| NONTERMINALS
+   39|   Calc.
+   40|   Expr<<out int e>>.
+   41|   Term<<out int t>>.
+   42|   Fact<<out int f>>.
+   43| 
+   44| RULES
+   45| 
+   46|   Calc =                 LOCAL<<int e = 0;>> 
+   47|     Expr<<out e>>        SEM<<Console.WriteLine(e); LastCalcResult = e; >>.  
+   48|     
+   49|   Expr<<out int e>> =    LOCAL<<int t = 0; e = 0;>> 
+   50|     Term<<out e>>             
+   51|     { '+' Term<<out t>>  SEM<<e = Add(e, t);>>
+   52|     | '-' Term<<out t>>  SEM<<e = Sub(e, t);>>
+   53|     }.
+   54|     
+   55|   Term<<out int t>> =    LOCAL<<int f = 0; t = 0;>>
+   56|     Fact<<out t>>
+   57|     { '*' Fact<<out f>>  SEM<<t = Mult(t, f);>>
+   58|     | '/' Fact<<out f>>  SEM<<t = Div(t, f);>>
+   59|     }.
+   60|     
+   61|   Fact<<out int f>> =    LOCAL <<f = 0;>>
+   62|       number<<out f>>
+   63|     | '(' Expr<<out f>> ')'.
+   64| 
+   65| END Calc.
 
 
 error(s) and warning(s):
